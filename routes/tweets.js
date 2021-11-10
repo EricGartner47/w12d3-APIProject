@@ -22,6 +22,9 @@ router.get("/", asyncHandler(async(req, res)=> {
 
 router.get("/:id(\\d+)", asyncHandler(async(req, res, next)=> {
     const tweetId = await Tweet.findByPk(req.params.id)
+    const tweetNotFoundError = (tweetId) => {
+        
+    }
     console.log(tweetId.message)
     res.json({tweetId})
 }))
